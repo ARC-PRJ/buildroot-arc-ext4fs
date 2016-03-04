@@ -1,0 +1,22 @@
+diff -Nur linux-arc-3.18-2-ori/arch/arc/boot/dts/axs101.dts linux-arc-3.18-2-mod/arch/arc/boot/dts/axs101.dts
+--- linux-arc-3.18-2-ori/arch/arc/boot/dts/axs101.dts	2016-03-04 11:14:37.995981569 +0800
++++ linux-arc-3.18-2-mod/arch/arc/boot/dts/axs101.dts	2016-03-04 11:48:40.787981326 +0800
+@@ -16,6 +16,6 @@
+ 	compatible = "snps,axs101", "snps,arc-sdp";
+ 
+ 	chosen {
+-		bootargs = "earlycon=uart8250,mmio32,0xe0022000,115200n8 console=tty0 console=ttyS3,115200n8 consoleblank=0";
++		bootargs = "earlycon=uart8250,mmio32,0xe0022000,115200n8 console=tty0 console=ttyS3,115200n8 consoleblank=0 root=/dev/mmcblk0p2 rw rootfstype=ext4 rootwait";
+ 	};
+ };
+diff -Nur linux-arc-3.18-2-ori/arch/arc/configs/axs101_defconfig linux-arc-3.18-2-mod/arch/arc/configs/axs101_defconfig
+--- linux-arc-3.18-2-ori/arch/arc/configs/axs101_defconfig	2016-03-04 11:14:40.507981569 +0800
++++ linux-arc-3.18-2-mod/arch/arc/configs/axs101_defconfig	2016-03-04 11:49:04.875981323 +0800
+@@ -12,7 +12,6 @@
+ # CONFIG_UTS_NS is not set
+ # CONFIG_PID_NS is not set
+ CONFIG_BLK_DEV_INITRD=y
+-CONFIG_INITRAMFS_SOURCE="../arc_initramfs/"
+ CONFIG_EMBEDDED=y
+ CONFIG_PERF_EVENTS=y
+ # CONFIG_VM_EVENT_COUNTERS is not set
