@@ -5,7 +5,10 @@
 
 ## resize file system
 > fdisk /dev/mmcblk0
+
 > (d,2,n,p,2,enter,enter,w)
+
 > reboot the system
+
 > resize2fs /dev/mmcblk0p2 
 
